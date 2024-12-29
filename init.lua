@@ -360,7 +360,13 @@ require('lazy').setup({
         angularls = {},
         somesass_ls = {},
         css_variables = {},
-        cssls = {},
+        cssls = {
+          settings = {
+            css = {
+              validate = true,
+            },
+          },
+        },
         cssmodules_ls = {},
         lua_ls = {
           -- cmd = { ... },
@@ -461,6 +467,7 @@ require('lazy').setup({
         -- { 'vim_prettier', 'prettierd', 'prettier' },
 
         html = { 'vim_prettier' },
+        scss = { 'vim_prettier' },
         javascript = { 'vim_prettier' },
         typescript = { 'vim_prettier' },
         typescriptreact = { 'vim_prettier' },
