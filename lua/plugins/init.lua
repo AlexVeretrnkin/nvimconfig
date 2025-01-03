@@ -8,4 +8,8 @@ return {
   require 'plugins.telescope',
   require 'plugins.prettier',
   require 'plugins.lsconfig',
+  require 'plugins.conform',
+  require 'plugins.typescript-tools',
+  require 'plugins.nvim-cmp',
+  require 'plugins.mini',
 }
