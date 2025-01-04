@@ -13,4 +13,6 @@ return {
   require 'plugins.nvim-cmp',
   require 'plugins.mini',
   -- require 'plugins.blink-cmp',
+  require 'plugins.copilot',
+  require 'plugins.copilot-chat',
 }

@@ -26,11 +26,13 @@ return { -- Autocompletion
         -- },
       },
     },
+    {
+      'zbirenbaum/copilot-cmp',
+      config = function()
+        require('copilot_cmp').setup()
+      end,
+    },
     'saadparwaiz1/cmp_luasnip',
-
-    -- Adds other completion capabilities.
-    --  nvim-cmp does not ship with all sources by default. They are split
-    --  into multiple repos for maintenance purposes.
     'hrsh7th/cmp-nvim-lsp',
     'hrsh7th/cmp-path',
     'hrsh7th/cmp-buffer', -- Буферні підказки
@@ -43,13 +45,43 @@ return { -- Autocompletion
     -- See `:help cmp`
     local cmp = require 'cmp'
     local luasnip = require 'luasnip'
+    local lspkind = require 'lspkind'
     luasnip.config.setup {}
+
+    lspkind.init {
+      symbol_map = {
+        Copilot = '',
+      },
+    }
+
+    vim.api.nvim_set_hl(0, 'CmpItemKindCopilot', { fg = '#6CC644' })
 
     cmp.setup {
       snippet = {
         expand = function(args)
           luasnip.lsp_expand(args.body)
         end,
+      },
+      formatting = {
+        format = lspkind.cmp_format {
+          mode = 'symbol', -- show only symbol annotations
+          maxwidth = {
+            -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
+            -- can also be a function to dynamically calculate max width such as
+            -- menu = function() return math.floor(0.45 * vim.o.columns) end,
+            menu = 50, -- leading text (labelDetails)
+            abbr = 50, -- actual suggestion item
+          },
+          ellipsis_char = '...', -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
+          show_labelDetails = true, -- show labelDetails in menu. Disabled by default
+
+          -- The function below will be called before any actual modifications from lspkind
+          -- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
+          before = function(entry, vim_item)
+            -- ...
+            return vim_item
+          end,
+        },
       },
       completion = { completeopt = 'menu,menuone,noinsert' },
 
@@ -106,16 +138,13 @@ return { -- Autocompletion
         --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
       },
       sources = {
-        {
-          name = 'lazydev',
-          -- set group index to 0 to skip loading LuaLS completions as lazydev recommends it
-          group_index = 0,
-        },
+        { name = 'lazydev' },
         { name = 'nvim_lsp' },
         { name = 'luasnip' },
         { name = 'buffer' },
         { name = 'path' },
         { name = 'nerdfont' },
+        { name = 'copilot', group_index = 2 },
       },
     }
   end,
