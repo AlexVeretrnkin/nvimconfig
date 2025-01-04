@@ -7,9 +7,10 @@ return {
   require 'plugins.treesitter',
   require 'plugins.telescope',
   require 'plugins.prettier',
-  require 'plugins.lsconfig',
+  require 'plugins.lsp-config',
   require 'plugins.conform',
   require 'plugins.typescript-tools',
   require 'plugins.nvim-cmp',
   require 'plugins.mini',
+  -- require 'plugins.blink-cmp',
 }

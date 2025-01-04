@@ -13,6 +13,7 @@ return {
 
     -- Allows extra capabilities provided by nvim-cmp
     'hrsh7th/cmp-nvim-lsp',
+    'saghen/blink.cmp',
   },
   config = function()
     -- Brief aside: **What is LSP?**
@@ -175,6 +176,7 @@ return {
       -- ts_ls = {},
       html = {},
       prettier = {},
+      eslint = {},
       angularls = {},
       somesass_ls = {},
       css_variables = {},
@@ -227,6 +229,9 @@ return {
           -- by the server configuration above. Useful when disabling
           -- certain features of an LSP (for example, turning off formatting for ts_ls)
           server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
+
+          server.capabilities = require('blink.cmp').get_lsp_capabilities(server.capabilities)
+
           require('lspconfig')[server_name].setup(server)
         end,
       },
