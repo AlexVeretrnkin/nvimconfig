@@ -175,8 +175,8 @@ return {
       -- But for many setups, the LSP (`ts_ls`) will work just fine
       -- ts_ls = {},
       html = {},
-      prettier = {},
-      eslint = {},
+      -- prettier = {},
+      -- eslint = {},
       angularls = {},
       somesass_ls = {},
       css_variables = {},

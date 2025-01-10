@@ -49,13 +49,13 @@ return { -- Autoformat
       -- You can use 'stop_after_first' to run the first available formatter from the list
       -- { 'vim_prettier', 'prettierd', 'prettier' },
 
-      html = { 'vim_prettier' },
-      json = { 'vim_prettier' },
-      scss = { 'vim_prettier' },
-      javascript = { 'vim_prettier' },
-      typescript = { 'vim_prettier' },
-      typescriptreact = { 'vim_prettier' },
-      javascriptreact = { 'vim_prettier' },
+      html = { 'vim_prettier', stop_after_first = true },
+      json = { 'vim_prettier', stop_after_first = true },
+      scss = { 'vim_prettier', stop_after_first = true },
+      javascript = { 'vim_prettier', stop_after_first = true },
+      typescript = { 'vim_prettier', stop_after_first = true },
+      typescriptreact = { 'vim_prettier', stop_after_first = true },
+      javascriptreact = { 'vim_prettier', stop_after_first = true },
     },
   },
 }

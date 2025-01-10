@@ -1,5 +1,4 @@
 -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
-
 return {
   require 'plugins.gitsigns',
   require 'plugins.which-key',
@@ -10,9 +9,9 @@ return {
   require 'plugins.lsp-config',
   require 'plugins.conform',
   require 'plugins.typescript-tools',
-  require 'plugins.nvim-cmp',
   require 'plugins.mini',
-  -- require 'plugins.blink-cmp',
+  -- require 'plugins.nvim-cmp',
+  require 'plugins.blink-cmp',
   require 'plugins.copilot',
   require 'plugins.copilot-chat',
 }
