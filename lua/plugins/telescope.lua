@@ -59,12 +59,14 @@ return { -- Fuzzy Finder (files, lsp, etc)
         ['ui-select'] = {
           require('telescope.themes').get_dropdown(),
         },
+        angular = {},
       },
     }
 
     -- Enable Telescope extensions if they are installed
     pcall(require('telescope').load_extension, 'fzf')
     pcall(require('telescope').load_extension, 'ui-select')
+    pcall(require('telescope').load_extension, 'angular')
 
     -- See `:help telescope.builtin`
     local builtin = require 'telescope.builtin'
@@ -79,6 +81,9 @@ return { -- Fuzzy Finder (files, lsp, etc)
     vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
     vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
     vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
+
+    vim.keymap.set('n', '<leader>sac', ':Telescope angular find_in_component<CR>', { desc = '[S]earch in [a]ngular [c]omponent' })
+    vim.keymap.set('n', '<leader>sat', ':Telescope angular find_in_component_template<CR>', { desc = '[S]earch in [a]ngular [t]emplate' })
 
     -- Slightly advanced example of overriding default behavior and theme
     vim.keymap.set('n', '<leader>/', function()
