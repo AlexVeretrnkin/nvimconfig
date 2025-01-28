@@ -14,4 +14,5 @@ return {
   require 'plugins.blink-cmp',
   require 'plugins.copilot',
   require 'plugins.copilot-chat',
+  require 'plugins.vim-tmux-navigator',
 }

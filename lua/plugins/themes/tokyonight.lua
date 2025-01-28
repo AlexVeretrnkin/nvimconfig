@@ -12,6 +12,12 @@ return { -- You can easily change to a different colorscheme.
     vim.cmd.colorscheme 'tokyonight-night'
 
     -- You can configure highlights by doing something like:
-    -- vim.cmd.hi 'Comment gui=none'
+    -- Transparacy which is not looking good tbo
+    --vim.cmd [[
+    --   highlight Normal guibg=none
+    --   highlight NonText guibg=none
+    --   highlight Normal ctermbg=none
+    --   highlight NonText ctermbg=none
+    -- ]]
   end,
 }
