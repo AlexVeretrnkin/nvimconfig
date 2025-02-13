@@ -2,6 +2,8 @@ require 'settings.basic-keymaps'
 
 require 'settings.basic-settings'
 
+require 'plugins.angular-swithcer'
+
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
@@ -68,12 +70,12 @@ require('lazy').setup({
   },
   { 'Bilal2453/luvit-meta', lazy = true },
 
-  {
-    'windwp/nvim-ts-autotag', -- Автоматичне закривання HTML тегів
-    config = function()
-      require('nvim-ts-autotag').setup()
-    end,
-  },
+  -- {
+  --   'windwp/nvim-ts-autotag', -- Автоматичне закривання HTML тегів
+  --   config = function()
+  --     require('nvim-ts-autotag').setup()
+  --   end,
+  -- },
   {
     'norcalli/nvim-colorizer.lua', -- Підсвічування кольорів у CSS
     config = function()
