@@ -2,8 +2,14 @@ return {
   'prettier/vim-prettier',
   event = 'VeryLazy',
   config = function()
-    -- Вимикаємо автозапуск форматування, бо це робитиме conform.nvim
-    -- vim.g['prettier#autoformat'] = 0
-    -- vim.g['prettier#quickfix_enabled'] = 0
+    vim.api.nvim_create_augroup('PrettierAutocmd', { clear = true })
+
+    vim.api.nvim_create_autocmd('BufWritePre', {
+      group = 'PrettierAutocmd',
+      pattern = { '*.js', '*.ts', '*.jsx', '*.tsx', '*.json', '*.css', '*.scss', '*.html', '*.md' },
+      callback = function()
+        vim.cmd 'PrettierAsync'
+      end,
+    })
   end,
 }

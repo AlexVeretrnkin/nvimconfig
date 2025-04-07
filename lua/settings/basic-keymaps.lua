@@ -39,3 +39,5 @@ vim.keymap.set('n', '<leader>cd', function()
 end, { desc = 'Copy current file directory (relative) to clipboard' })
 
 vim.keymap.set('n', '<leader>cb', '<cmd>bd!<CR>', { desc = 'Close current buffer' })
+vim.api.nvim_set_keymap('n', '<leader>co', ':%bd|e#|bd#<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>ck', ':bufdo bd!<CR>', { noremap = true, silent = true })

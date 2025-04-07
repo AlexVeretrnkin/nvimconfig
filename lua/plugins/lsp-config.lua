@@ -9,7 +9,7 @@ return {
 
     -- Useful status updates for LSP.
     -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-    { 'j-hui/fidget.nvim', opts = {} },
+    -- { 'j-hui/fidget.nvim', opts = {} },
 
     -- Allows extra capabilities provided by nvim-cmp
     'hrsh7th/cmp-nvim-lsp',
@@ -175,19 +175,12 @@ return {
       -- But for many setups, the LSP (`ts_ls`) will work just fine
       -- ts_ls = {},
       html = {},
-      -- prettier = {},
-      -- eslint = {},
+      prettier = {},
+      eslint = {},
       typos_lsp = {},
       angularls = {},
       somesass_ls = {},
       css_variables = {},
-      cssls = {
-        settings = {
-          css = {
-            validate = true,
-          },
-        },
-      },
       cssls = {},
       cssmodules_ls = {},
       lua_ls = {

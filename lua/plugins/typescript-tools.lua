@@ -14,5 +14,9 @@ return {
     vim.keymap.set('n', '<leader>rf', function()
       require('typescript-tools.api').fix_all(false)
     end, { desc = '[F]ix all' })
+
+    vim.keymap.set('n', '<leader>ia', function()
+      require('typescript-tools.api').fix_all(false)
+    end, { desc = '[i]mport [a]ll' })
   end,
 }
