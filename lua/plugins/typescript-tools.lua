@@ -16,7 +16,7 @@ return {
     end, { desc = '[F]ix all' })
 
     vim.keymap.set('n', '<leader>ia', function()
-      require('typescript-tools.api').fix_all(false)
+      require('typescript-tools.api').add_missing_imports(false)
     end, { desc = '[i]mport [a]ll' })
   end,
 }

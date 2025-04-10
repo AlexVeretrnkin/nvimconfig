@@ -33,7 +33,7 @@ return { -- Autoformat
     end,
     formatters = {
       vim_prettier = {
-        command = 'Prettier',
+        command = 'prettier',
         args = {
           '--stdin-filepath',
           '$FILENAME',
@@ -49,13 +49,13 @@ return { -- Autoformat
       -- You can use 'stop_after_first' to run the first available formatter from the list
       -- { 'vim_prettier', 'prettierd', 'prettier' },
 
-      html = { 'vim_prettier', stop_after_first = true },
-      json = { 'vim_prettier', stop_after_first = true },
-      scss = { 'vim_prettier', stop_after_first = true },
-      javascript = { 'vim_prettier', stop_after_first = true },
-      typescript = { 'vim_prettier', stop_after_first = true },
-      typescriptreact = { 'vim_prettier', stop_after_first = true },
-      javascriptreact = { 'vim_prettier', stop_after_first = true },
+      -- html = { 'vim_prettier', 'prettierd', 'prettier' },
+      -- json = { 'vim_prettier', 'prettierd', 'prettier' },
+      -- scss = { 'vim_prettier', stop_after_first = true },
+      -- javascript = { 'vim_prettier', stop_after_first = true },
+      -- typescript = { 'vim_prettier', stop_after_first = true },
+      -- typescriptreact = { 'vim_prettier', stop_after_first = true },
+      -- javascriptreact = { 'vim_prettier', stop_after_first = true },
     },
   },
 }
